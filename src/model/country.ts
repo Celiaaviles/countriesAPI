@@ -1,8 +1,16 @@
 export type Country = {
-  name: string;
-  capital: string;
+  flags: {
+    svg: string;
+  };
+  name: {
+    common: string;
+  };
+  flag: string;
+  capital: string[] | string;
   population: number;
-  region: string;
-  continents: string;
-  flags: string;
+  maps: {
+    googleMaps: string;
+    openStreetMaps: string;
+  };
+  continents: string[] | string;
 };
