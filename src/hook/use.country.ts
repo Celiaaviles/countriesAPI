@@ -4,7 +4,7 @@ import { loadAllCountriesThunk } from '../redux/country.thunks.ts';
 import { ApiCountriesRepository } from '../service/api.repository.ts';
 import { AppDispatch, RootState } from '../store/store';
 
-export const urlBase = 'https://restcountries.com/v3.1';
+export const urlBase = 'https://restcountries.com/v3.1/all';
 
 export function useCountry() {
   const repo = useMemo(() => new ApiCountriesRepository(urlBase), []);

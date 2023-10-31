@@ -5,7 +5,7 @@ import { ApiCountriesRepository } from '../service/api.repository';
 export const loadAllCountriesThunk = createAsyncThunk<
   Country[],
   ApiCountriesRepository
->('countries/load', async (repo) => {
+>('countries/', async (repo) => {
   const countries = await repo.getAll();
   return countries;
 });
