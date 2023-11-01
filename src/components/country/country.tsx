@@ -15,11 +15,11 @@ export const CountryCard = ({ country }: Props) => {
           alt={`Bandera de ${country.name.common}`}
         />
         <span className={styles.countrytitle}>{country.name.common}</span>
-        <p className={styles.countrydescription}>{country.capital}</p>
-        <span className={styles.ubication}>{country.continents}</span>
-        <span className={styles.ubication}>
+        <span className={styles.countrydescription}>{country.capital}</span>
+        <span className={styles.population}>
           Population: {country.population}
         </span>
+        <span className={styles.continents}>{country.continents}</span>
       </div>
     </li>
   );

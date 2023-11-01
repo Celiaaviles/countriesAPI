@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { Country } from '../model/country';
 import { loadAllCountriesThunk } from './country.thunks';
 
@@ -14,7 +14,14 @@ const initialState: CountriesState = {
 const countriesSlice = createSlice({
   initialState: initialState,
   name: 'countries',
-  reducers: {},
+  reducers: {
+    continents: (state, action: PayloadAction<string>) => {
+      const continents = action.payload;
+      state.countries = state.countries.filter(
+        (countries) => countries.continents === continents
+      );
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(loadAllCountriesThunk.pending, (state) => {
       state.countriesState = 'idle';

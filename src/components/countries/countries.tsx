@@ -1,38 +1,24 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useCountry } from '../../hook/use.country';
 import { Country } from '../../model/country';
 import { CountryCard } from '../country/country';
 import styles from './countries.module.scss';
 
 export default function Countries() {
-  const { getCountries, countries } = useCountry();
+  const {
+    getCountries,
+    countries,
+    handleContinents,
+    currentPage,
+    handleNextPage,
+    handlePreviousPage,
+    paginatedData,
+    pageCount,
+  } = useCountry();
 
   useEffect(() => {
     getCountries();
   }, [getCountries]);
-
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const pageSize = 10;
-  const pageCount = Math.ceil(countries.length / pageSize);
-  let paginatedData = countries.slice(
-    (currentPage - 1) * pageSize,
-    currentPage * pageSize
-  );
-
-  const handleNextPage = () => {
-    if (currentPage < pageCount) {
-      setCurrentPage(currentPage + 1);
-      paginatedData = [];
-    }
-  };
-
-  const handlePreviousPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-      paginatedData = [];
-    }
-  };
 
   return (
     <div className={styles.countriesMainList}>
@@ -42,21 +28,21 @@ export default function Countries() {
       </span>
       <nav className={styles.selectcontinent}>
         <select
-          /*onChange={handleUbication}*/
+          onChange={handleContinents}
           className={styles.selectregion}
-          defaultValue="See All"
-          name="region"
+          defaultValue={'Filter by region'}
+          name="continents"
           id="region-select"
         >
           <option value="" disabled>
             Select Region
           </option>
-          <option value="See All">See All</option>
-          <option value="America">America</option>
-          <option value="Asia">Asia</option>
-          <option value="Africa">Africa</option>
-          <option value="Europe">Europe</option>
-          <option value="Oceania">Oceania</option>
+          <option value="all">All</option>
+          <option value="america">America</option>
+          <option value="asia">Asia</option>
+          <option value="africa">Africa</option>
+          <option value="europe">Europe</option>
+          <option value="oceania">Oceania</option>
         </select>
       </nav>
       <ul className={styles.countries}>
