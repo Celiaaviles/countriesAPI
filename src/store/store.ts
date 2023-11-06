@@ -5,6 +5,11 @@ export const appStore = configureStore({
   reducer: {
     countries: countriesReducer,
   },
+
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export type AppDispatch = typeof appStore.dispatch;

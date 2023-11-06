@@ -1,3 +1,9 @@
+import Countries from '../components/countries/countries';
+
 export default function App() {
-  return <></>;
+  return (
+    <>
+      <Countries></Countries>
+    </>
+  );
 }

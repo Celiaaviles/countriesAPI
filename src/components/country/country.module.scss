@@ -1,0 +1,57 @@
+.countrylist {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1rem;
+  width: 30vw;
+  background-color: #495e5b;
+  border-radius: 20px;
+
+  .countryimage {
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+  }
+
+  .countryInfo {
+    display: flex;
+    padding: 2rem;
+    height: fit-content;
+    flex-direction: column;
+    width: 90%;
+    .countrytitle {
+      padding-top: 1rem;
+      display: block;
+      color: #fff;
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 600;
+      text-transform: capitalize;
+      margin-bottom: 1rem;
+    }
+    .countrydescription {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow-y: hidden;
+      color: #fff;
+      font-family: 'Space Mono', monospace;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .population {
+      color: #f4b1bb;
+      font-family: Space Mono;
+      font-size: 0.8rem;
+      line-height: 140%;
+    }
+    .continents {
+      color: #f4b1bb;
+      font-family: Space Mono;
+      font-size: 0.8rem;
+      line-height: 140%;
+    }
+  }
+}
