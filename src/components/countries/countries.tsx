@@ -53,7 +53,7 @@ export default function Countries() {
           ></CountryCard>
         ))}
       </ul>
-      {countries.length > 10 && (
+      {countries.length > 9 && (
         <>
           <div className={styles.previousNextButtonsdiv}>
             <button

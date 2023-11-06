@@ -8,6 +8,7 @@ import { AppDispatch, RootState } from '../store/store';
 export let urlBase = 'https://restcountries.com/v3.1/all';
 
 export function useCountry() {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const repo = useMemo(() => new ApiCountriesRepository(urlBase), [urlBase]);
 
   const { countriesState, countries } = useSelector(
@@ -27,7 +28,7 @@ export function useCountry() {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const pageSize = 10;
+  const pageSize = 9;
   const pageCount = Math.ceil(countries.length / pageSize);
   let paginatedData = countries.slice(
     (currentPage - 1) * pageSize,

@@ -6,14 +6,18 @@
   align-items: center;
 
   .countries {
-    display: flex;
-    margin: 1rem 0;
+    // display: flex;
+    // margin: 1rem 0;
+    // padding: 0;
+    // flex-wrap: wrap;
+    // justify-content: center;
+    // align-items: center;
+    // max-width: 80%;
+    // height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0;
     padding: 0;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    max-width: 80%;
-    height: auto;
   }
 
   h2 {

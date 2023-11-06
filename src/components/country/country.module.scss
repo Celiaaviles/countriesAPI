@@ -4,16 +4,14 @@
   justify-content: center;
   flex-direction: column;
   margin: 1rem;
-  width: 80vw;
+  width: 30vw;
   background-color: #495e5b;
   border-radius: 20px;
 
   .countryimage {
-    border-radius: 20px 20px 0 0;
+    border-radius: 20px;
     align-items: center;
     justify-content: center;
-    height: 25%;
-    width: 100%;
     object-fit: cover;
   }
 
@@ -22,6 +20,7 @@
     padding: 2rem;
     height: fit-content;
     flex-direction: column;
+    width: 90%;
     .countrytitle {
       padding-top: 1rem;
       display: block;
